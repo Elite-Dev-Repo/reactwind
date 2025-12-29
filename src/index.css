@@ -1,0 +1,75 @@
+/* src/index.css */
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: var(--font-main);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-primary);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-secondary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  border: 2px solid var(--color-secondary);
+}
+
+@theme {
+  /* Example of defining a custom color variable 'primary' 
+  --color-primary: oklch(0.53 0.12 118.34); /* Example color
+  --color-secondary: oklch(0.92 0.19 114.08);
+
+  /* Example of defining a custom font variable 'display' 
+  --font-display: "Satoshi", "sans-serif";*/ /* Define actual values in :root */
+  --color-primary: #2a0c62;
+  --color-secondary: #ffcc00;
+  --font-main: "Quicksand", sans-serif;
+}
+
+@layer components {
+  .nav {
+    @apply w-full px-4 border-b-[1px] border-b-[#ffffff7a] h-[80px] flex justify-center items-center;
+  }
+
+  .cont {
+    padding-inline: 20px;
+    max-width: 1200px;
+    @apply min-h-screen w-full flex justify-evenly flex-col items-center mx-auto relative;
+  }
+}
+.nav-itm {
+  position: relative;
+}
+.nav-itm::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-secondary);
+  transition: 400ms ease-in-out;
+}
+
+.nav-itm:hover::after {
+  width: 120%;
+}
