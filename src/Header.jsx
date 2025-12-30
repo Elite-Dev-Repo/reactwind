@@ -1,4 +1,32 @@
 function Header() {
+  const proof = [
+    {
+      amount: "2,500+",
+      value: "Completed Projects.",
+    },
+    {
+      amount: "500+",
+      value: "Satisfied Clients.",
+    },
+    {
+      amount: "7+ years",
+      value: " Building Scalable Solutions.",
+    },
+  ];
+
+  const proofitem = proof.map((proof) => {
+    return (
+      <div
+        key={proof.value}
+        className="flex flex-col items-center gap-5 px-3.5 border-l-2 border-l-secondary"
+      >
+        <h3 className="text-3xl font-bold text-white">{proof.amount}</h3>
+        <p className="text-[14px] font-extrabold text-secondary">
+          {proof.value}
+        </p>
+      </div>
+    );
+  });
   const navs = ["HOME", "ABOUT", "SERVICES", "PRICING", "CONTACT"];
   let navItems = navs.map((nav) => {
     return (
@@ -14,7 +42,10 @@ function Header() {
   });
 
   return (
-    <div className="h-screen w-full items-center bg-primary relative">
+    <div
+      className="h-screen w-full justify-center items-center bg-primary relative mb-10"
+      id="home"
+    >
       <nav className="nav">
         <div className="container mx-auto flex justify-between items-center">
           <a href="#" className="text-2xl font-bold text-secondary">
@@ -31,12 +62,12 @@ function Header() {
 
       <i className="fa-solid fa-rocket text-secondary absolute top-[55%] right-[15%] text-[4em]"></i>
 
-      <header className="mt-[5em] flex flex-col gap-6 items-center">
+      <header className="cont flex flex-col gap-3 items-center justify-center">
         <h1 className="underline text-4xl text-center text-7xl font-bold text-white">
-          Futuristic Digital Solutions <br /> Designed For Efficiecy.
+          Futuristic Digital Solutions <br /> Designed For Efficiency.
         </h1>
 
-        <p className="text-center text-secondary mt-[2em]">
+        <p className="text-center text-secondary mt-[1em]">
           Helping businesses thrive with authentic ideas and goal driven digital
           solutions.
         </p>
@@ -49,6 +80,8 @@ function Header() {
             Get Started
           </button>
         </div>
+
+        <div className="flex gap-14 mt-10">{proofitem}</div>
       </header>
     </div>
   );

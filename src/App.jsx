@@ -4,6 +4,7 @@ import Pricing from "./Pricing";
 import Contact from "./contact";
 import Footer from "./Footer";
 import Services from "./Services";
+import Faqs from "./Faqs";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <About />
       <Services />
       <Pricing />
+      <Faqs />
       <Contact />
       <Footer />
     </>
