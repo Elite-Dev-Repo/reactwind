@@ -52,7 +52,7 @@ function Pricing() {
   });
 
   return (
-    <section className="cont px-4">
+    <section id="pricing" className="cont px-4">
       <div
         className="cont flex flex-col lg:flex-col items-center w-full h-full justify-around bg-secondary gap-8 py-12 lg:py-0"
         style={{ borderRadius: "20px" }}

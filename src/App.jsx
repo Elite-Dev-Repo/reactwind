@@ -1,5 +1,5 @@
 import Header from "./Header";
-import About from "./about";
+import About from "./About";
 import Pricing from "./Pricing";
 import Contact from "./contact";
 import Footer from "./Footer";
